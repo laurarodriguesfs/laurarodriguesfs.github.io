@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Rodrigues - Arquiteta de sistemas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/neue-kaine');
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+        }
+
+        body {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            margin: auto;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f3e7de;
+        }
+
+        header {
+            background-color: #f3e7de;
+            padding: 1rem 0;
+            text-align: center;
+            margin: auto;
+            max-width: 90%;
+
+        }
+
+        nav {
+            margin: 10px 0px;
+            border-bottom: 2px solid #001d51;
+            padding: 0.5rem;
+            max-width: 90%;
+            margin: auto;
+        }
+
+
+        nav ul {
+            display: flex;
+            justify-content: right;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #001d51;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+            display: block;
+        }
+
+        .banner {
+            background-color: #f3e7de;
+            padding: 2rem;
+            text-align: center;
+            height: auto;
+        }
+
+        .columns-special {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .column-large {
+            flex: 2;
+            background-color: #f3e7de;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .column-little {
+            flex: 1;
+            background-color: #831d1c;
+            padding: 15px;
+            border-radius: 8px;
+            color: #f3e7de;
+        }
+
+        .content-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .column {
+            flex: 1;
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .link-group {
+            margin: 1rem;
+        }
+
+        .about-container {
+            background: #cfcfea;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 40px auto;
+            font-size: 12px;
+        }
+
+        .about-container h2 {
+            color: #831d1c;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Neue Kaine', sans-serif;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #001d51;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+
+        .blog-section {
+        background-color: #ecf0f1;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+    }
+
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .blog-post {
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .blog-post h3 {
+        margin-top: 1rem;
+        color: #2c3e50;
+    }
+
+    .blog-post p {
+        color: #34495e;
+    }.portfolio-section {
+    background-color: #f3e7de;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    text-align: center;
+    }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .portfolio-item {
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .portfolio-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .portfolio-item h3 {
+        margin-top: 1rem;
+        color: #2c3e50;
+    }
+
+    .portfolio-item p {
+        color: #34495e;
+    }
+
+    .large-image{
+        width: 100%;
+    }
+    .columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        background-color: #f3e7de;
+    }
+
+    .column-little {
+        flex: 1;
+        max-width: 400px;
+        text-align: center;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .column-little h2 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 1.8rem;
+        color: #001d51;
+        margin-bottom: 1rem;
+    }
+
+    .column-little h3 {
+        font-family: "Neue Kaine", sans-serif;
+        font-size: 1.2rem;
+        color: #831d1c;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .column-large {
+        flex: 2;
+        max-width: 700px;
+    }
+
+    .column-large h2 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 2rem;
+        color: #001d51;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .service {
+        padding: 1px 5px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #831d1c;
+    }
+
+    .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .service h3 {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 1.4rem;
+        color: #831d1c;
+        margin-bottom: 0.5rem;
+    }
+
+    .service p {
+        font-family: "Neue Kaine", sans-serif;
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.4;
+    }
+
+    #lista-escura{
+        color: #831d1c;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+        .columns {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .column-little,
+        .column-large {
+            max-width: 100%;
+        }
+        
+            /* Dispositivos pequenos (smartphones) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .menu {
+                display: none; /* Oculta menu grande */
+            }
+            .mobile-menu {
+                display: block; /* Exibe menu mobile */
+            }
+        }
+
+        /* Tablets e telas médias */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none; /* Esconder sidebar em telas menores */
+            }
+            .content {
+                width: 100%; /* Expandir conteúdo */
+            }
+        }
+
+        /* Telas grandes (desktop) */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+
+            #only-desktop{
+                display: none;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #001d51;
+                padding:0;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                padding: 0;
+                border-bottom: 1px solid #cfcfea;
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 16px;
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+            }
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <header>
+        <figure>
+            <img class=logo src="Ativo 10@3x.png" alt="logo">
+        </figure>
+    </header>
+    
+    <div>
+    <nav id="only-desktop">
+        <ul>
+            <li><a href="#sobrep">Sobre a profissão</a></li>
+            <li><a href="#sobrem">Sobre mim</a></li>
+            <li><a href="#portfolio">Meu portfólio</a></li>
+            <li><a href="#blog-home">Últimos artigos do Blog</a></li>
+        </ul>
+    </nav>
+    <main class="content-section">
+
+        <div class="banner">
+            
+            <section class="columns">
+                <article id=sobrep class="column-little">
+                    <h2>Seu site é o cartão de visita da sua empresa</h2>
+                    <h3>Uma Arquiteta de Sistemas é responsável por planejar, projetar, desenvolver e garantir o bom funcionamento de sistemas de software, escolhendo as tecnologias adequadas e garantindo que o sistema seja eficiente, seguro e escalável.</h3>
+                    <ul id="lista-escura">
+                        <li><strong>Planejamento e Arquitetura</strong></li>
+                        <li><strong>Escolha de Tecnologias</strong></li>
+                        <li><strong>Desenvolvimento de Software</strong> </li>
+                        <li><strong>Segurança da Informação</strong></li>
+                        <li><strong>Escalabilidade e Performance</strong> </li>
+                        <li><strong>Integração de Sistemas</strong></li>
+                        <li><strong>Monitoramento e Manutenção</strong></li>
+                        <li><strong>Documentação e Padronização</strong></li>
+                        <li><strong>Colaboração e Comunicação</strong></li>
+                    </ul>
+                    
+                    <h2>Do início ao fim, cuidamos de tudo pra você!</h2>
+                </article>
+                
+                <article class="column-large"class="services">
+                    <h2>Meus serviços</h2>
+                
+                    <div class="service">
+                        <h3>LAYOUT</h3>
+                        <p>Montamos o seu site com as fontes, cores e elementos da sua marca com um visual moderno e responsivo.</p>
+                    </div>
+                
+                    <div class="service">
+                        <h3>INFRAESTRUTURA</h3>
+                        <p>Contratação de domínio, hospedagem e configuração, faremos toda a operação para o seu site ficar online.</p>
+                    </div>
+                
+                    <div class="service">
+                        <h3>DESENVOLVIMENTO</h3>
+                        <p>Desenvolvimento personalizado, com funcionalidades que atendem aos seus objetivos.</p>
+                    </div>
+                
+                    <div class="service">
+                        <h3>TREINAMENTO</h3>
+                        <p>Praticidade e facilidade, treinamentos direcionados e uma documentação clara e acessível.</p>
+                    </div>
+                
+                    <div class="service">
+                        <h3>PUBLICAÇÃO</h3>
+                        <p>Cuidaremos de todo o processo de publicação do site, das configurações de SEO, segurança e otimização.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    
+        <section id=sobrem class="about-container">
+            <h2>Sobre Mim</h2>
+            <p>Sou <strong>Laura Rodrigues</strong>, Arquiteta de Sistemas apaixonada por tecnologia e inovação. Minha trajetória começou ainda na faculdade, onde dei os primeiros passos no desenvolvimento e infraestrutura. Desde então, venho aprimorando minhas habilidades e expandindo minha atuação para oferecer soluções tecnológicas eficientes, seguras e escaláveis.</p>
+            <a href="sobre.html">Saiba mais sobre mim</a>
+        </section>
+        <section id=portfolio class="portfolio-section">
+            <h2>Meu Portfólio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="projeto1.jpg" alt="Projeto 1">
+                    </div>
+                    <h3>Projeto 1</h3>
+                    <p>Descrição breve do projeto destacando tecnologias e desafios.</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="projeto2.jpg" alt="Projeto 2">
+                    </div>
+                    <h3>Projeto 2</h3>
+                    <p>Descrição breve do projeto destacando tecnologias e desafios.</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="projeto3.jpg" alt="Projeto 3">
+                    </div>
+                    <h3>Projeto 3</h3>
+                    <p>Descrição breve do projeto destacando tecnologias e desafios.</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="projeto4.jpg" alt="Projeto 4">
+                    </div>
+                    <h3>Projeto 4</h3>
+                    <p>Descrição breve do projeto destacando tecnologias e desafios.</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="projeto5.jpg" alt="Projeto 5">
+                    </div>
+                    <h3>Projeto 5</h3>
+                    <p>Descrição breve do projeto destacando tecnologias e desafios.</p>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="projeto6.jpg" alt="Projeto 6">
+                    </div>
+                    <h3>Projeto 6</h3>
+                    <p>Descrição breve do projeto destacando tecnologias e desafios.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id=blog-home class="blog-section">
+            <h2>Últimos artigos do Blog</h2>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <h3>O Futuro da Inteligência Artificial</h3>
+                    <p>A IA está revolucionando o mundo da tecnologia. Descubra as tendências e impactos dessa revolução.</p>
+                </div>
+                <div class="blog-post">
+                    <h3>Segurança Digital: Protegendo Seus Dados</h3>
+                    <p>Saiba como proteger suas informações e evitar ataques cibernéticos no mundo digital.</p>
+                </div>
+                <div class="blog-post">
+                    <h3>Desenvolvimento Web: O que há de novo?</h3>
+                    <p>Conheça as novidades e melhores práticas no desenvolvimento web moderno.</p>
+                </div>
+            </div>
+        </section>
+    </main>    
+    <footer>
+    <p>&copy; 2025 Laura Rodrigues. Todos os direitos reservados.</p>
+    <p>Feito com café, código e umas boas horas de depuração! ☕💻</p>
+    <p>Se algo não funcionar, desligue e ligue de novo... ou me chame!</p>
+    </footer>
+</body>
+</html>
